@@ -11,7 +11,7 @@ type NoteProps = {
 function NoteCard({note, onArchive, onDelete, onEdit}: NoteProps) {
 
     return (
-      <div className="nes-container is-rounded is-dark" style={{padding: 12}}>
+      <div className="nes-container is-rounded is-dark" style={{padding: 12}} data-testid={`note-${note.id}`}>
         <div>
           <h3>{note.title}</h3>
           <p>{note.content}</p>
@@ -21,7 +21,7 @@ function NoteCard({note, onArchive, onDelete, onEdit}: NoteProps) {
         <div style={{display: "flex", justifyContent: "end"}}>
           <button className='nes-btn' onClick={()=>onArchive(note.id)}>Archivar</button>
           <button className='nes-btn is-warning' onClick={()=>onEdit(note)}>Editar</button>
-          <button className='nes-btn is-error' onClick={()=>onDelete(note.id)}>Eliminar</button>
+          <button className='nes-btn is-error' data-testid="delete" onClick={()=>onDelete(note.id)}>Eliminar</button>
         </div>
   
       </div>

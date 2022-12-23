@@ -12,10 +12,12 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
+    //esto lo pasamos a false para que no joda en la parte de cypress
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"],
+  "include": ["src", "cypress"],
+  //en ese include le digo que debe ignorar tyscript para poder ver bien los archivos de cypress
   "references": [{ "path": "./tsconfig.node.json" }]
 }
